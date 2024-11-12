@@ -18,7 +18,7 @@ void setup()
 void loop()
 {
   while(Serial.available()) {  // checking serial port
-    data = Serial.readString();  // reading data
+    data = Serial.readStringUntil('\n');  // reading data
     data.trim();  // remove white spaces and non-printable characters
     lcd.clear();  // clear LCD screen
     lcd.print(data);  // print data on LCD
